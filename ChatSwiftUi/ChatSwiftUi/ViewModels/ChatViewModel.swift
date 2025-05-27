@@ -10,7 +10,6 @@ import Combine
 
 class ChatViewModel: ObservableObject {
     @Published var messages: [Message] = []
-    
     private var db = Firestore.firestore()
     private var listener: ListenerRegistration?
 
@@ -18,7 +17,9 @@ class ChatViewModel: ObservableObject {
         fetchMessages()
     }
 
+
     func fetchMessages() {
+        
         listener = db.collection("messages")
             .order(by: "timestamp", descending: false)
             .addSnapshotListener { [weak self] snapshot, error in
@@ -31,14 +32,14 @@ class ChatViewModel: ObservableObject {
     }
 
     func sendMessage(text: String, senderId: String) {
-        let message = Message(text: text, senderId: senderId, timestamp: Date())
-
         do {
-            _ = try db.collection("messages").addDocument(from: message)
-        } catch {
-            print("❌ Error sending message: \(error)")
+            let newMessage =  Message(text: text, senderId: senderId, timestamp: Date())
+            try db.collection("messages").document().setData(from: newMessage)
+        }catch {
+            print("error sending message")
         }
     }
+
 
     deinit {
         listener?.remove()

@@ -9,11 +9,13 @@ import SwiftUI
 
 struct SplashScreen: View {
     @ObservedObject var loginViewModel : LoginViewModel
+    @StateObject var chatViewModel = ChatViewModel()
     @State var goToLogin = false
     
     var body: some View {
         if let user = loginViewModel.email {
             HomeView(loginViewModel : loginViewModel)
+                .environmentObject(chatViewModel)
         }else {
             if goToLogin {
                 LoginView(loginViewModel : loginViewModel)
