@@ -18,10 +18,9 @@ final class LoginViewModel : ObservableObject {
     @Published var name : String?
     @Published var existError = false
     @Published var errorMessage : String?
+    private let authenticationRepository : FireBaseUserNetworking
     
-    private let authenticationRepository : CreateNewUserNetworking
-    
-    init(authenticationRepository: CreateNewUserNetworking = CreateNewUserNetworking()) {
+    init(authenticationRepository: FireBaseUserNetworking = FireBaseUserNetworking()) {
         self.authenticationRepository = authenticationRepository
     }
     func createNewUser(email : String, password : String, name :  String) {

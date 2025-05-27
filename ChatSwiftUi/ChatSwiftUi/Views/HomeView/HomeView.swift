@@ -19,7 +19,8 @@ struct HomeView: View {
             }
 
             Tab("Perfil", systemImage: "person.fill"){
-                ProfileView()
+                ProfileView(loginViewModel: loginViewModel)
+                    .environmentObject(chatViewModel)
             }
                 
         }

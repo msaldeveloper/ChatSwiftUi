@@ -6,8 +6,9 @@
 //
 
 import FirebaseAuth
+import FirebaseFirestore
 
-class CreateNewUserNetworking {
+class FireBaseUserNetworking {
     func createNewUser(email: String, password: String, name: String, completion: @escaping (Result<User, Error>) -> ()) {
             Auth.auth().createUser(withEmail: email, password: password) { data, error in
                 if let error = error {
@@ -53,7 +54,34 @@ class CreateNewUserNetworking {
             
             completion(.success(.init(email: email, userId: userId, name: name)))
         }
-        
-    
     }
+
+    func updateUserName(newName: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let user = Auth.auth().currentUser else {
+            completion(.failure(NSError(domain: "No user logged in", code: 401)))
+            return
+        }
+        
+        let changeRequest = user.createProfileChangeRequest()
+        changeRequest.displayName = newName
+        changeRequest.commitChanges { error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            
+            // Actualizar en Firestore también
+            let db = Firestore.firestore()
+            db.collection("users").document(user.uid).updateData([
+                "name": newName
+            ]) { error in
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.success(()))
+                }
+            }
+        }
+    }
+
 }
