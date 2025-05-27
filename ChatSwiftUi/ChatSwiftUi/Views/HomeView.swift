@@ -4,7 +4,6 @@
 //
 //  Created by Mario Saldana on 27/05/25.
 //
-
 import SwiftUI
 
 struct HomeView: View {
@@ -20,19 +19,31 @@ struct HomeView: View {
                         HStack {
                             if message.senderId == loginViewModel.userId {
                                 Spacer()
-                                Text(message.text)
-                                    .padding(12)
-                                    .background(Color.green)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(16, corners: [.topLeft, .topRight, .bottomLeft])
-                                    .frame(maxWidth: UIScreen.main.bounds.width * 0.7, alignment: .trailing)
+                                VStack(alignment: .trailing, spacing: 4) {
+                                    Text(message.senderId)
+                                        .font(.caption)
+                                        .foregroundColor(.gray)
+                                    
+                                    Text(message.text)
+                                        .padding(12)
+                                        .background(Color.green)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(16, corners: [.topLeft, .topRight, .bottomLeft])
+                                        .frame(maxWidth: UIScreen.main.bounds.width * 0.7, alignment: .trailing)
+                                }
                             } else {
-                                Text(message.text)
-                                    .padding(12)
-                                    .background(Color.gray.opacity(0.3))
-                                    .foregroundColor(.black)
-                                    .cornerRadius(16, corners: [.topLeft, .topRight, .bottomRight])
-                                    .frame(maxWidth: UIScreen.main.bounds.width * 0.7, alignment: .leading)
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text(message.senderId)
+                                        .font(.caption)
+                                        .foregroundColor(.gray)
+                                    
+                                    Text(message.text)
+                                        .padding(12)
+                                        .background(Color.gray.opacity(0.3))
+                                        .foregroundColor(.black)
+                                        .cornerRadius(16, corners: [.topLeft, .topRight, .bottomRight])
+                                        .frame(maxWidth: UIScreen.main.bounds.width * 0.7, alignment: .leading)
+                                }
                                 Spacer()
                             }
                         }
