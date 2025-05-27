@@ -9,11 +9,13 @@ import FirebaseAuth
 struct User {
     let email: String
     let userId: String
+    let name: String
 }
 
 final class LoginViewModel : ObservableObject {
     @Published var userId : String?
     @Published var email : String?
+    @Published var name : String?
     @Published var existError = false
     @Published var errorMessage : String?
     private let authenticationRepository : CreateNewUserNetworking
@@ -21,13 +23,14 @@ final class LoginViewModel : ObservableObject {
     init(authenticationRepository: CreateNewUserNetworking = CreateNewUserNetworking()) {
         self.authenticationRepository = authenticationRepository
     }
-    func createNewUser(email : String, password : String) {
-        authenticationRepository.createNewUser(email: email, password: password) { [weak self]result in
+    func createNewUser(email : String, password : String, name :  String) {
+        authenticationRepository.createNewUser(email: email, password: password, name: name) { [weak self]result in
             switch result {
                 
             case let .success(response):
                 self?.email = response.email
                 self?.userId = response.userId
+                self?.name = response.name
             case let .failure(error):
                 
                 self?.errorMessage = error.localizedDescription
@@ -43,6 +46,7 @@ final class LoginViewModel : ObservableObject {
             case let .success(response):
                 self?.email = response.email
                 self?.userId = response.userId
+                self?.name = response.name
             case let .failure(error):
                 
                 self?.errorMessage = error.localizedDescription

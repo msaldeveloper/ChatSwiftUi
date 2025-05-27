@@ -30,9 +30,9 @@
             filePath = "ChatSwiftUi/ViewModels/LoginViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "createNewUser(email:password:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "createNewUser(email:password:name:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -94,9 +94,9 @@
             filePath = "ChatSwiftUi/ViewModels/LoginViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "createNewUser(email:password:)"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "createNewUser(email:password:name:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -110,9 +110,147 @@
             filePath = "ChatSwiftUi/ViewModels/LoginViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "createNewUser(email:password:)"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "createNewUser(email:password:name:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6C103C90-2100-45D4-B67E-0ED3552EB8DB - e6c0a968cd5907b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;ChatSwiftUi.User, Swift.Error&gt;) -&gt; () in ChatSwiftUi.LoginViewModel.createNewUser(email: Swift.String, password: Swift.String, name: Swift.String) -&gt; ()"
+                  moduleName = "ChatSwiftUi.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/geovoy/proyects/nativo/ios/msaldaPractices/ChatSwiftUi/ChatSwiftUi/ChatSwiftUi/ViewModels/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30">
+               </Location>
+               <Location
+                  uuid = "6C103C90-2100-45D4-B67E-0ED3552EB8DB - e6c0a968cd5907b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;ChatSwiftUi.User, Swift.Error&gt;) -&gt; () in ChatSwiftUi.LoginViewModel.createNewUser(email: Swift.String, password: Swift.String, name: Swift.String) -&gt; ()"
+                  moduleName = "ChatSwiftUi.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/geovoy/proyects/nativo/ios/msaldaPractices/ChatSwiftUi/ChatSwiftUi/ChatSwiftUi/ViewModels/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30">
+               </Location>
+               <Location
+                  uuid = "6C103C90-2100-45D4-B67E-0ED3552EB8DB - e6c0a968cd5907b7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;ChatSwiftUi.User, Swift.Error&gt;) -&gt; () in ChatSwiftUi.LoginViewModel.createNewUser(email: Swift.String, password: Swift.String, name: Swift.String) -&gt; ()"
+                  moduleName = "ChatSwiftUi.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/geovoy/proyects/nativo/ios/msaldaPractices/ChatSwiftUi/ChatSwiftUi/ChatSwiftUi/ViewModels/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4891B324-3281-4635-BFED-73BB7D0481E0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSwiftUi/ViewModels/LoginViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "createNewUser(email:password:name:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4891B324-3281-4635-BFED-73BB7D0481E0 - 7f0cc17223759cda"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChatSwiftUi.LoginViewModel.createNewUser(email: Swift.String, password: Swift.String, name: Swift.String) -&gt; ()"
+                  moduleName = "ChatSwiftUi.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/geovoy/proyects/nativo/ios/msaldaPractices/ChatSwiftUi/ChatSwiftUi/ChatSwiftUi/ViewModels/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27">
+               </Location>
+               <Location
+                  uuid = "4891B324-3281-4635-BFED-73BB7D0481E0 - e6c0a968cd5907d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;ChatSwiftUi.User, Swift.Error&gt;) -&gt; () in ChatSwiftUi.LoginViewModel.createNewUser(email: Swift.String, password: Swift.String, name: Swift.String) -&gt; ()"
+                  moduleName = "ChatSwiftUi.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/geovoy/proyects/nativo/ios/msaldaPractices/ChatSwiftUi/ChatSwiftUi/ChatSwiftUi/ViewModels/LoginViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F69E01C9-8703-45C7-8DA4-EDDFB589C966"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSwiftUi/Services/CreateNewUser.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "singIn(email:password:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AA0F1FB2-504D-473B-A728-7FA5850C7F61"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSwiftUi/Services/CreateNewUser.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "singIn(email:password:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E71E973B-DBAC-4209-AB30-3EA1C90EC857"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ChatSwiftUi/Services/CreateNewUser.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "singIn(email:password:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

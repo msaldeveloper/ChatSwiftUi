@@ -20,7 +20,7 @@ struct HomeView: View {
                             if message.senderId == loginViewModel.userId {
                                 Spacer()
                                 VStack(alignment: .trailing, spacing: 4) {
-                                    Text(message.senderId)
+                                    Text((loginViewModel.name?.isEmpty == false) ? loginViewModel.name! : message.senderId)
                                         .font(.caption)
                                         .foregroundColor(.gray)
                                     
@@ -48,6 +48,7 @@ struct HomeView: View {
                             }
                         }
                     }
+
                 }
                 .padding()
             }

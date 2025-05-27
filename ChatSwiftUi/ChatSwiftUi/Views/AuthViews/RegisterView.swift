@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RegisterView: View {
     @ObservedObject var loginViewModel : LoginViewModel
+    @State var textFieldName : String = ""
     @State var textFieldEmail: String = ""
     @State var textFieldPassword: String = ""
        
@@ -28,7 +29,28 @@ struct RegisterView: View {
                        .padding(.bottom, 32)
                    ZStack{
                        HStack(spacing: 12) {
-                           Image(systemName: "lock.open.rotation")
+                           Image(systemName: "person.circle")
+                               .font(.title)
+                               .foregroundStyle(.yellow)
+
+                           TextField("Nombre", text: $textFieldName, prompt: Text("Nombre").foregroundStyle(.gray))
+                               .font(.system(size: 18))
+                               .foregroundStyle(.black)
+                               .textContentType(.emailAddress)
+                               .textInputAutocapitalization(.never)
+                       }
+                       .padding(6)
+                       
+                   }.padding(.horizontal, 50)
+                   .overlay(
+                       RoundedRectangle(cornerRadius: 10)
+                           .stroke(lineWidth: 1)
+                           .foregroundColor(.black)
+                           .padding(.horizontal, 50)
+                   )
+                   ZStack{
+                       HStack(spacing: 12) {
+                           Image(systemName: "envelope.fill")
                                .font(.title)
                                .foregroundStyle(.yellow)
 
@@ -70,7 +92,7 @@ struct RegisterView: View {
                            .padding(.horizontal, 50)
                    ).padding(.bottom, 100)
                    Button {
-                       loginViewModel.createNewUser(email: textFieldEmail, password: textFieldPassword)
+                       loginViewModel.createNewUser(email: textFieldEmail, password: textFieldPassword, name: textFieldName)
                    } label: {
                        ZStack {
                            RoundedRectangle(cornerRadius: 10)
