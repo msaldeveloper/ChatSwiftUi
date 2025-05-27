@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyCUB3aYVlnpzU1Y9LpGgaA_u_ymyvINnnc</string>
+	<string>AIzaSyDDuP7meSloGHwFIRPvSFlM0pg0YMOS_8M</string>
 	<key>GCM_SENDER_ID</key>
-	<string>789335036983</string>
+	<string>667314796850</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.msalda.ChatSwiftUi</string>
 	<key>PROJECT_ID</key>
-	<string>chatswiftui-bf268</string>
+	<string>chatswift-e14ef</string>
 	<key>STORAGE_BUCKET</key>
-	<string>chatswiftui-bf268.firebasestorage.app</string>
+	<string>chatswift-e14ef.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:789335036983:ios:f141275832005843c59bb2</string>
+	<string>1:667314796850:ios:3d9913eab79c53c2137f2b</string>
 </dict>
 </plist>

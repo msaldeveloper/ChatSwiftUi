@@ -8,28 +8,31 @@
 import SwiftUI
 
 struct SplashScreen: View {
+    @ObservedObject var loginViewModel : LoginViewModel
     @State var goToLogin = false
     
     var body: some View {
-        if goToLogin {
-            LoginView()
+        if let user = loginViewModel.email {
+            HomeView(loginViewModel : loginViewModel)
         }else {
-            VStack {
-                Image("chatLogo")
-                    .resizable()
-                    .scaledToFit()
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                            goToLogin = true
+            if goToLogin {
+                LoginView(loginViewModel : loginViewModel)
+            }else {
+                VStack {
+                    Image("chatLogo")
+                        .resizable()
+                        .scaledToFit()
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                goToLogin = true
+                            }
                         }
-                    }
+                }
+                .padding()
             }
-            .padding()
         }
+        
         
     }
 }
 
-#Preview {
-    SplashScreen()
-}

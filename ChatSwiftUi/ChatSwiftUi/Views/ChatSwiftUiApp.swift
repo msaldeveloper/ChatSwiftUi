@@ -7,7 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
-
+import FirebaseAppCheck
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
@@ -19,16 +19,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 }
 
 @main
-struct YourApp: App {
-  // register app delegate for Firebase setup
-  @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+struct ChatSwiftUiApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @StateObject var loginViewModel = LoginViewModel()
 
-
-  var body: some Scene {
-    WindowGroup {
-      NavigationView {
-          SplashScreen()
-      }
+    var body: some Scene {
+        WindowGroup {
+            NavigationView {
+                SplashScreen(loginViewModel: loginViewModel)
+            }
+        }
     }
-  }
 }

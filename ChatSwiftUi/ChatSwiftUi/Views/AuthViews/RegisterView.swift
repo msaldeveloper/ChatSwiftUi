@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RegisterView: View {
+    @ObservedObject var loginViewModel : LoginViewModel
     @State var textFieldEmail: String = ""
     @State var textFieldPassword: String = ""
        
@@ -69,7 +70,7 @@ struct RegisterView: View {
                            .padding(.horizontal, 50)
                    ).padding(.bottom, 100)
                    Button {
-                       print("Registrarse")
+                       loginViewModel.createNewUser(email: textFieldEmail, password: textFieldPassword)
                    } label: {
                        ZStack {
                            RoundedRectangle(cornerRadius: 10)
@@ -83,7 +84,7 @@ struct RegisterView: View {
                                .foregroundStyle(.white)
                                .padding()
                        }.padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 50))
-                   }
+                   }.alert(loginViewModel.errorMessage ?? "error", isPresented: $loginViewModel.existError) { Button("OK", role: .cancel) { } }
 
                }
                Spacer()

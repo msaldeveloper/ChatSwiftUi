@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    @ObservedObject var loginViewModel : LoginViewModel
     @State private var mail = ""
     @State private var password = ""
     @State var goToRegister = false
@@ -66,7 +67,7 @@ struct LoginView: View {
                 ).padding(.bottom, 100)
                     
                 Button {
-                    print("login")
+                    loginViewModel.signIn(email: mail, password: password) 
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
@@ -100,7 +101,10 @@ struct LoginView: View {
                     }.padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 50))
                 }
                 .sheet(isPresented: $goToRegister) {
-                    RegisterView()
+                    RegisterView(loginViewModel: loginViewModel)
+                        .presentationDetents([.height(UIScreen.main.bounds.height / 1.27)])
+                        .presentationDragIndicator(.visible)
+                        .presentationCornerRadius(25)
                 }
 
                 
@@ -109,6 +113,3 @@ struct LoginView: View {
     }
 }
 
-#Preview {
-    LoginView()
-}
