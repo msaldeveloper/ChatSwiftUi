@@ -5,7 +5,7 @@
 //  Created by Mario Saldana on 27/05/25.
 //
 
-//import FirebaseFirestoreSwift
+import FirebaseFirestore
 import Foundation
 
 struct Message: Identifiable, Codable {

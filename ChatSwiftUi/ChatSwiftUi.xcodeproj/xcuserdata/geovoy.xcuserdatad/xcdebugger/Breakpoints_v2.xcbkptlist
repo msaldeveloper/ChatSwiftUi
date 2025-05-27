@@ -46,8 +46,8 @@
             filePath = "ChatSwiftUi/ViewModels/LoginViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "createNewUser(email:password:)"
             landmarkType = "7">
          </BreakpointContent>

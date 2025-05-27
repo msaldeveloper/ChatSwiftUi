@@ -8,9 +8,11 @@ import SwiftUI
 import FirebaseAuth
 struct User {
     let email: String
+    let userId: String
 }
 
 final class LoginViewModel : ObservableObject {
+    @Published var userId : String?
     @Published var email : String?
     @Published var existError = false
     @Published var errorMessage : String?
@@ -25,6 +27,7 @@ final class LoginViewModel : ObservableObject {
                 
             case let .success(response):
                 self?.email = response.email
+                self?.userId = response.userId
             case let .failure(error):
                 
                 self?.errorMessage = error.localizedDescription

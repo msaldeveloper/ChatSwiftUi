@@ -13,8 +13,9 @@ class CreateNewUserNetworking {
             if let error = error {
                 completion(.failure(error))
             }
-            guard let email = data?.user.email else { return }
-            completion(.success(.init(email: email)))
+            guard let email = data?.user.email, let userId = data?.user.uid else { return }
+            
+            completion(.success(.init(email: email, userId: userId)))
         }
     }
     
@@ -24,8 +25,9 @@ class CreateNewUserNetworking {
             if let error = error {
                 completion(.failure(error))
             }
-            guard let email = data?.user.email else { return }
-            completion(.success(.init(email: email)))
+            guard let email = data?.user.email, let userId = data?.user.uid else { return }
+            
+            completion(.success(.init(email: email, userId: userId)))
         }
         
     
