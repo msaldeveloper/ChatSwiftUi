@@ -13,26 +13,31 @@ struct SplashScreen: View {
     @State var goToLogin = false
     
     var body: some View {
-        if let user = loginViewModel.email {
-            HomeView(loginViewModel : loginViewModel)
-                .environmentObject(chatViewModel)
-        }else {
-            if goToLogin {
-                LoginView(loginViewModel : loginViewModel)
+        VStack{
+            if let user = loginViewModel.email {
+                HomeView(loginViewModel : loginViewModel, chatViewModel: chatViewModel)
+                    
             }else {
-                VStack {
-                    Image("chatLogo")
-                        .resizable()
-                        .scaledToFit()
-                        .onAppear {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                goToLogin = true
+                if goToLogin {
+                    LoginView(loginViewModel : loginViewModel)
+                }else {
+                    VStack {
+                        Image("chatLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .onAppear {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                    goToLogin = true
+                                }
                             }
-                        }
+                    }
+                    .padding()
                 }
-                .padding()
             }
+        }.onAppear {
+            loginViewModel.saveSession()
         }
+        
         
         
     }

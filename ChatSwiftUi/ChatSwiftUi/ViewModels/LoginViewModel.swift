@@ -18,6 +18,7 @@ final class LoginViewModel : ObservableObject {
     @Published var name : String?
     @Published var existError = false
     @Published var errorMessage : String?
+    
     private let authenticationRepository : CreateNewUserNetworking
     
     init(authenticationRepository: CreateNewUserNetworking = CreateNewUserNetworking()) {
@@ -47,6 +48,8 @@ final class LoginViewModel : ObservableObject {
                 self?.email = response.email
                 self?.userId = response.userId
                 self?.name = response.name
+                UserDefaults.standard.setValue(email, forKey: "Mail")
+                UserDefaults.standard.setValue(password, forKey: "Password")
             case let .failure(error):
                 
                 self?.errorMessage = error.localizedDescription
@@ -54,4 +57,15 @@ final class LoginViewModel : ObservableObject {
             }
         }
     }
+    
+    func saveSession(){
+        guard let user = UserDefaults.standard.string(forKey: "Mail"),
+              let password = UserDefaults.standard.string(forKey: "Password") else {return}
+        signIn(email: user, password: password)
+        
+    }
 }
+
+//remove data
+//UserDefaults.standard.removeObject(forKey: "Mail")
+//UserDefaults.standard.removeObject(forKey: "Password")

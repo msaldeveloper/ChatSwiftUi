@@ -6,7 +6,7 @@
 //
 import SwiftUI
 
-struct HomeView: View {
+struct ChatView: View {
     @ObservedObject var loginViewModel: LoginViewModel
     @StateObject var chatViewModel = ChatViewModel()
     @State private var messageText = ""
@@ -65,6 +65,9 @@ struct HomeView: View {
                 }
             }
             .padding()
+        }
+        .onAppear {
+            loginViewModel.saveSession()
         }
     }
 }
