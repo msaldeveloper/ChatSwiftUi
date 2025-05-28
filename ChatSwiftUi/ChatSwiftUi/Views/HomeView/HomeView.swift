@@ -12,18 +12,22 @@ struct HomeView: View {
     @ObservedObject var chatViewModel : ChatViewModel
     
     var body: some View {
-        TabView {
-            Tab("Chat", systemImage: "envelope.fill"){
-                ChatView(loginViewModel: loginViewModel)
-                    .environmentObject(chatViewModel)
-            }
+        
+            TabView {
+                Tab("Chat", systemImage: "envelope.fill"){
+                    ChatView(loginViewModel: loginViewModel)
+                        .environmentObject(chatViewModel)
+                }
 
-            Tab("Perfil", systemImage: "person.fill"){
-                ProfileView(loginViewModel: loginViewModel)
-                    .environmentObject(chatViewModel)
+                Tab("Perfil", systemImage: "person.fill"){
+                    ProfileView(loginViewModel: loginViewModel)
+                        .environmentObject(chatViewModel)
+                }
+                    
             }
-                
-        }
+            .tint(.orange)
+        
+        
     }
 }
 
