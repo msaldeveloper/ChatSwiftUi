@@ -69,18 +69,18 @@ class FireBaseUserNetworking {
                 completion(.failure(error))
                 return
             }
-            
-            // Actualizar en Firestore también
+
             let db = Firestore.firestore()
-            db.collection("users").document(user.uid).updateData([
+            db.collection("users").document(user.uid).setData([
                 "name": newName
-            ]) { error in
+            ], merge: true) { error in
                 if let error = error {
                     completion(.failure(error))
                 } else {
                     completion(.success(()))
                 }
             }
+
         }
     }
 
